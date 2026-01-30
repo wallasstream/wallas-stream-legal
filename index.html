@@ -1,41 +1,256 @@
+<!-- =========================
+FILE: index.html
+Put your logo file in the repo as: logo.png
+========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Wallas’ Stream</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wallas’ Stream — Legal</title>
+  <meta name="description" content="Wallas’ Stream — Privacy Policy and Terms of Service." />
+
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      background: #0b0b0b;
-      color: #f2f2f2;
+    :root{
+      --bg:#0b0b0b;
+      --card:#111214;
+      --muted:#9aa0a6;
+      --text:#f2f2f2;
+      --line:#222428;
+      --accent:#4da3ff;
+      --accent2:#20c997;
+      --danger:#ff4d4d;
+      --shadow: 0 10px 35px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 980px;
     }
-    a { color: #4da3ff; }
-    h1, h2 { margin-top: 40px; }
-    .footer { margin-top: 60px; font-size: 14px; opacity: 0.7; }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(77,163,255,.18), transparent 55%),
+                  radial-gradient(800px 500px at 20% 0%, rgba(32,201,151,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:32px 18px 52px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(17,18,20,.75);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      position: sticky; top: 14px; z-index: 50;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width: 0;}
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: #0f1012;
+      border: 1px solid var(--line);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden;
+      flex: 0 0 auto;
+    }
+    .logo img{width:100%; height:100%; object-fit:contain}
+    .brand .name{font-weight:700; letter-spacing:.2px}
+    .brand .sub{color:var(--muted); font-size:13px; margin-top:2px}
+    .nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      text-decoration:none;
+      font-size:14px;
+    }
+    .pill:hover{border-color:#2e3238; text-decoration:none}
+    .hero{
+      margin-top:22px;
+      padding:26px 18px;
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+    }
+    h1{margin:0; font-size:32px; letter-spacing:-.3px}
+    .lead{margin:10px 0 0; color:var(--muted); max-width: 68ch}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr}
+      .topbar{position:static}
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(17,18,20,.65);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .card h2{margin:0 0 10px; font-size:18px}
+    .kvs{display:grid; gap:10px}
+    .kv{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:12px 12px;
+      background: rgba(0,0,0,.18);
+    }
+    .kv b{display:block; font-size:14px}
+    .kv span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      font-size:13px;
+      color: var(--text);
+      background: rgba(0,0,0,.18);
+    }
+    .dot{width:8px; height:8px; border-radius:50%}
+    .dot.green{background:var(--accent2)}
+    .dot.blue{background:var(--accent)}
+    .dot.red{background:var(--danger)}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      padding:12px 14px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight:600;
+    }
+    .btn.primary{
+      background: rgba(77,163,255,.18);
+      border-color: rgba(77,163,255,.35);
+    }
+    .btn:hover{text-decoration:none; border-color:#2e3238}
+    .muted{color:var(--muted)}
+    .footer{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size:13px;
+    }
+    .mini-links{display:flex; gap:12px; flex-wrap:wrap}
+    .mini-links a{color:var(--muted)}
+    .mini-links a:hover{color:var(--text)}
   </style>
 </head>
+
 <body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-label="Wallas’ Stream logo">
+          <!-- Put your logo in the repo as logo.png -->
+          <img src="logo.png" alt="Wallas’ Stream logo" />
+        </div>
+        <div style="min-width:0">
+          <div class="name">Wallas’ Stream</div>
+          <div class="sub">Legal & policies</div>
+        </div>
+      </div>
 
-<h1>Wallas’ Stream</h1>
+      <div class="nav">
+        <a class="pill" href="privacy.html">Privacy Policy</a>
+        <a class="pill" href="terms.html">Terms of Service</a>
+      </div>
+    </div>
 
-<p>
-Wallas’ Stream transmits audio in real time from a Mac to an iPhone using a local network or a wired USB connection, keeping all audio processing local and private.
-</p>
+    <section class="hero">
+      <h1>Wallas’ Stream — Legal</h1>
+      <p class="lead">
+        This page hosts the official Privacy Policy and Terms of Service for Wallas’ Stream (iOS, macOS, and Wallas Audio).
+      </p>
 
-<h2>Legal</h2>
-<ul>
-  <li><a href="privacy.html">Privacy Policy</a></li>
-  <li><a href="terms.html">Terms of Service</a></li>
-</ul>
+      <div class="grid">
+        <div class="card">
+          <h2>What Wallas’ Stream is</h2>
+          <p class="muted" style="margin:0">
+            Wallas’ Stream transmits audio from a Mac to an iPhone using a local network or a wired USB connection.
+            Audio is processed locally during active use. The app is designed for controlled, private listening.
+          </p>
 
-<div class="footer">
-  © 2026 Wallas
-</div>
+          <div class="badges" aria-label="Platforms">
+            <span class="badge"><span class="dot blue"></span> iOS</span>
+            <span class="badge"><span class="dot green"></span> macOS</span>
+            <span class="badge"><span class="dot red"></span> Wallas Audio (virtual device)</span>
+          </div>
 
+          <div class="actions">
+            <a class="btn primary" href="privacy.html">Open Privacy Policy</a>
+            <a class="btn" href="terms.html">Open Terms of Service</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Quick links</h2>
+          <div class="kvs">
+            <div class="kv">
+              <div>
+                <b>Privacy Policy</b>
+                <span>How the app handles data and permissions.</span>
+              </div>
+              <a class="btn" href="privacy.html" style="padding:10px 12px">Open</a>
+            </div>
+
+            <div class="kv">
+              <div>
+                <b>Terms of Service</b>
+                <span>Rules for using the app and subscription terms.</span>
+              </div>
+              <a class="btn" href="terms.html" style="padding:10px 12px">Open</a>
+            </div>
+
+            <div class="kv">
+              <div>
+                <b>Contact</b>
+                <span>wallasstreamai@gmail.com</span>
+              </div>
+              <a class="btn" href="mailto:wallasstreamai@gmail.com" style="padding:10px 12px">Email</a>
+            </div>
+          </div>
+
+          <div class="footer">
+            <span>© <span id="year"></span> Wallas™. All rights reserved.</span>
+            <span class="mini-links">
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
