@@ -1,1 +1,95 @@
+<!-- =========================
+FILE: terms.html
+Paste your full Terms of Service inside <main> where indicated
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Service — Wallas’ Stream</title>
+  <meta name="description" content="Terms of Service for Wallas’ Stream." />
+  <style>
+    :root{
+      --bg:#0b0b0b; --card:#111214; --muted:#9aa0a6; --text:#f2f2f2;
+      --line:#222428; --accent:#4da3ff; --shadow:0 10px 35px rgba(0,0,0,.55);
+      --radius:18px; --radius2:24px; --max:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(77,163,255,.14), transparent 55%), var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:32px 18px 52px}
+    .top{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:14px 16px; border:1px solid var(--line); border-radius:var(--radius2);
+      background: rgba(17,18,20,.75); backdrop-filter: blur(10px); box-shadow: var(--shadow);
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:40px; height:40px; border-radius:12px; background:#0f1012; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden}
+    .logo img{width:100%; height:100%; object-fit:contain}
+    .name{font-weight:700}
+    .sub{color:var(--muted); font-size:13px; margin-top:2px}
+    .pill{display:inline-flex; padding:10px 12px; border-radius:999px; border:1px solid var(--line); background: rgba(0,0,0,.18); color:var(--text)}
+    .pill:hover{text-decoration:none; border-color:#2e3238}
+    main{
+      margin-top:18px;
+      border:1px solid var(--line); border-radius:var(--radius2);
+      background: rgba(17,18,20,.65); backdrop-filter: blur(10px); box-shadow: var(--shadow);
+      padding:22px;
+    }
+    h1{margin:0 0 6px; font-size:26px}
+    .meta{color:var(--muted); margin:0 0 18px}
+    h2{margin:22px 0 8px; font-size:18px}
+    ul{margin:8px 0 0 18px}
+    .footer{
+      margin-top:18px; padding-top:18px; border-top:1px solid var(--line);
+      color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="logo"><img src="logo.png" alt="Wallas’ Stream logo" /></div>
+        <div>
+          <div class="name">Wallas’ Stream</div>
+          <div class="sub">Terms of Service</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end">
+        <a class="pill" href="index.html">Home</a>
+        <a class="pill" href="privacy.html">Privacy</a>
+      </div>
+    </div>
 
+    <main>
+      <!-- ✅ Replace the content below with your full Terms of Service text -->
+      <h1>Terms of Service for Wallas’ Stream</h1>
+      <p class="meta">Last updated: January 2026</p>
+
+      <p>
+        Welcome to Wallas’ Stream. By downloading, installing, or using Wallas’ Stream (including the macOS app, iOS app,
+        and Wallas Audio), you agree to these Terms of Service (“Terms”).
+      </p>
+
+      <h2>1. Description of the Service</h2>
+      <p>Wallas’ Stream is a system designed to transmit audio in real time between devices...</p>
+
+      <!-- TODO: Paste the rest of your terms here exactly -->
+      <!-- ✅ End replacement -->
+
+      <div class="footer">
+        <span>Contact: <a href="mailto:wallasstreamai@gmail.com">wallasstreamai@gmail.com</a></span>
+        <span><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a></span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
